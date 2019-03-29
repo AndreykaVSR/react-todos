@@ -5,8 +5,11 @@ import styles from './TodoForm.module.css'
 function TodoForm(props){
     return (
         <form className={styles.TodoForm}>
-            <input />
-            <button className={styles.SubmitButton}>Add Todo</button>
+            <input value={props.text} onChange={props.handleChange} />
+            <button 
+            className={styles.SubmitButton}>
+            Add Todo
+            </button>
         </form>
     )
 }

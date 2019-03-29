@@ -10,7 +10,14 @@ class App extends Component {
       text: "",
       todos: []
     }
+    this.handleChange = this.handleChange.bind(this)
   }
+
+  handleChange(evt){
+    this.setState({ text: evt.currentTarget.value })
+  }
+
+
   render() {
     return (
       <div className="App">
@@ -18,7 +25,10 @@ class App extends Component {
           React Todo App
         </header>
         <NavBar />
-        <TodoForm />
+        <TodoForm
+        text={this.state.text} 
+        handleChange={this.handleChange}
+        />
       </div>
     );
   }
